@@ -1,6 +1,6 @@
 language: node_js
 node_js:
-  -"node"
+  - "node"
 branches:
   only:
     - test
@@ -8,6 +8,9 @@ notifications:
   email:
     on_success: change
     on_failure: change
-os: "windows"
 before_script:
-  - npm install
+  - psql -c 'CREATE DATABASE testTavis;' -U postgres
+services:
+  -postgresql
+script:
+  npm test

@@ -2,7 +2,7 @@
   "development": {
     "username": "postgres",
     "password": "andelabootcamp24",
-    "database": "testUpdate45",
+    "database": "testUpdate",
     "host": "127.0.0.1",
     "dialect": "postgres",
     "port": 5432
@@ -10,7 +10,7 @@
   "test": {
     "username": "postgres",
     "password": "",
-    "database": "testUpdate",
+    "database": "waleDB",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },

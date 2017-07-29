@@ -9,3 +9,5 @@ notifications:
     on_success: change
     on_failure: change
 os: "windows"
+before_script:
+  - npm install

@@ -9,9 +9,7 @@ notifications:
     on_success: change
     on_failure: change
 before_script:
-  - psql -U postgres -c 'create database waleDB;' 
-  - "npm install -g pg pg-hstore sequelize"
-  - "sequelize db:migrate"
+  - psql -U postgres -w -c 'create waleDB' 
 services:
   -postgresql
 script:

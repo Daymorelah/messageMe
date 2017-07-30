@@ -9,7 +9,7 @@ notifications:
     on_success: change
     on_failure: change
 before_script:
-  - psql -U postgres -w -c 'create waleDB' 
+  - psql -U postgres -w -c 'create database waleDB' 
 services:
   -postgresql
 script:

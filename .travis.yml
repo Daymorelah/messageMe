@@ -9,7 +9,8 @@ notifications:
     on_success: change
     on_failure: change
 before_script:
-  - psql -c 'CREATE DATABASE waleDB;' -U postgres
+  - psql -c 'create database waleDB;' -U postgres
+  - cp server/config/config.json.example server/config/config.json
 services:
   -postgresql
 script:

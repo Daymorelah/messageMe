@@ -10,7 +10,7 @@ notifications:
     on_failure: change
 before_script:
   - psql -U postgres -c 'create database waleDB;' 
-  - psql -c 'create user postgres with password andelabootcamp24;' -U postgres
+  - pg_sleep(10);
 services:
   -postgresql
 script:

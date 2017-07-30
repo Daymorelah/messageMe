@@ -9,8 +9,10 @@ notifications:
     on_success: change
     on_failure: change
 before_script:
-  - psql -c 'CREATE DATABASE testUpdate;' -U postgres
+  - psql -c 'CREATE DATABASE waleDB;' -U postgres
 services:
   -postgresql
 script:
-  npm test
+  - npm test
+env:
+  - NODE_ENV=test

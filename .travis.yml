@@ -10,7 +10,7 @@ notifications:
     on_failure: change
 before_script:
   - psql -U postgres -c 'create database waleDB;' 
-  - pg_sleep(10);
+  - "npm install -g pg pg-hstore"
 services:
   -postgresql
 script:

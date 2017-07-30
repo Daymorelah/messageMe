@@ -10,7 +10,7 @@ notifications:
     on_failure: change
 before_script:
   - psql -c 'create database waleDB;' -U postgres
-  - cp server/config/config.json.example server/config/config.json
+  - babel-node app.js
 services:
   -postgresql
 script:

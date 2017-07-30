@@ -13,16 +13,8 @@ before_script:
   - psql -w -c 'create database waleDB;' -U postgres 
   - npm run migrate-test
 services:
-  -postgresql
+  - postgresql
 script:
   - npm test
 env:
   - NODE_ENV=test
-  - TRAVIS=traviz CXX=g++-4.8
-addons:
-  apt:
-    sources:
-    - ubuntu-toolchain-r-test
-    packages:
-    - gcc-4.8
-    - g++-4.8

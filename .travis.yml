@@ -9,7 +9,9 @@ notifications:
     on_success: change
     on_failure: change
 before_script:
-  - psql -U postgres -w -c 'create database waleDB' 
+  - npm install -g sequelize-cli
+  - psql -w -c 'create database waleDB;' -U postgres 
+  - npm run migrate-test
 services:
   -postgresql
 script:

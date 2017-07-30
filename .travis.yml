@@ -13,6 +13,6 @@ before_script:
 services:
   -postgresql
 script:
-  - npm run format && npm test
+  - npm test
 env:
   - NODE_ENV=test

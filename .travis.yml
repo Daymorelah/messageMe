@@ -10,7 +10,7 @@ notifications:
     on_failure: change
 before_script:
   - npm install -g sequelize-cli
-  - psql -w -c 'create database waleDB;' -U postgres 
+  - psql -c 'create database waleDB;' -U postgres 
   - npm run migrate
 services:
   - postgresql

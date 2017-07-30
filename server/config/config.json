@@ -9,7 +9,7 @@
   },
   "test": {
     "username": "postgres",
-    "password": null,
+    "password": "andelabootcamp24",
     "database": "waleDB",
     "host": "127.0.0.1",
     "dialect": "postgres"

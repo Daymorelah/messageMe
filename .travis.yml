@@ -11,7 +11,7 @@ notifications:
 before_script:
   - npm install -g sequelize-cli
   - psql -w -c 'create database waleDB;' -U postgres 
-  - npm run migrate-test
+  - npm run migrate
 services:
   - postgresql
 script:

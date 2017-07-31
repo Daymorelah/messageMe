@@ -19,6 +19,5 @@ script:
   - npm test
 env:
   - NODE_ENV=test
-  - PORT=3000
 addons:
   postgresql: "9.3"

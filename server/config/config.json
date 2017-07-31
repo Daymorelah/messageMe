@@ -10,9 +10,10 @@
   "test": {
     "username": "postgres",
     "password": "andelabootcamp24",
-    "database": "waleDB",
+    "database": "travis",
     "host": "127.0.0.1",
-    "dialect": "postgres"
+    "dialect": "postgres",
+    "port": 5432
   },
   "production": {
     "username": "root",

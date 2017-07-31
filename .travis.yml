@@ -9,10 +9,9 @@ notifications:
     on_success: change
     on_failure: change
 before_script:
-  - npm install -g sequelize-cli babel-cli
+  - npm install -g sequelize-cli
   - psql -c 'drop database if exists waleDB;' -U postgres
   - psql -c 'create database waleDB;' -U postgres 
-  - npm run start
   - npm run migration
 services:
   - postgresql
@@ -20,3 +19,5 @@ script:
   - npm test
 env:
   - NODE_ENV=test
+addons:
+  postgresql: "9.3"

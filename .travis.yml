@@ -12,8 +12,8 @@ before_script:
   - npm install -g sequelize-cli
   - psql -c 'drop database if exists waleDB;' -U postgres
   - psql -c 'create database waleDB;' -U postgres 
-  - npm run format
   - npm run start
+  - npm run migration
 services:
   - postgresql
 script:

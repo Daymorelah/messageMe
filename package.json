@@ -7,7 +7,7 @@
     "start": "nodemon app.js --exec babel-node",
     "format": "sequelize db:migrate:undo:all && sequelize db:migrate",
     "test": "mocha test/controllers/ --compilers js:babel-register",
-    "migrate": "sequelize db:migrate"
+    "migration": "sequelize db:migrate"
   },
   "author": "Ademola Hussain",
   "license": "ISC",

@@ -9,7 +9,7 @@ notifications:
     on_success: change
     on_failure: change
 before_script:
-  - npm install -g sequelize-cli
+  - npm install -g sequelize-cli babel-cli
   - npm run migration
 services:
   - postgresql

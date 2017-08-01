@@ -19,5 +19,9 @@ env:
   - NODE_ENV=test
 addons:
   postgresql: "9.3"
+  code_climate:
+    repo_token: 70accd21d1a90a5963132daba95acb431e1b54da99b1d8f0eef9a46e09d52dc8
 after_success:
   - npm run coveralls
+  - npm install -g codeclimate-test-reporter
+  - codeclimate-test-reporter < ./coverage/lcov.info

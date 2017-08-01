@@ -19,3 +19,5 @@ env:
   - NODE_ENV=test
 addons:
   postgresql: "9.3"
+after_success:
+  - npm run coveralls

@@ -6,8 +6,10 @@
   "scripts": {
     "start": "nodemon app.js --exec babel-node",
     "format": "sequelize db:migrate:undo:all && sequelize db:migrate",
-    "test": "mocha test/controllers/ --compilers js:babel-register",
-    "migration": "sequelize db:migrate"
+    "test": "set NODE_ENV=test&& mocha test/controllers/ --compilers js:babel-register",
+    "migration": "sequelize db:migrate",
+    "coverage": "babel-node ./node_modules/babel-istanbul/lib/cli.js cover ./node_modules/mocha/bin/_mocha test/controllers",
+    "coveralls": "npm run coverage && cat ./coverage/lcov.info | coveralls"
   },
   "author": "Ademola Hussain",
   "license": "ISC",
@@ -24,11 +26,18 @@
     "sequelize": "^4.4.2"
   },
   "devDependencies": {
+    "babel-istanbul": "^0.12.2",
     "babel-preset-es2015": "^6.24.1",
     "babel-register": "^6.24.1",
+    "coveralls": "^2.13.1",
     "eslint": "^3.19.0",
     "eslint-config-airbnb-base": "^11.2.0",
     "eslint-plugin-import": "^2.2.0",
+    "mocha-lcov-reporter": "^1.3.0",
     "nodemon": "^1.11.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Daymorelah/messageMe.git"
   }
 }

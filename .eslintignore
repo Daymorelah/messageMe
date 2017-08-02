@@ -1,0 +1,5 @@
+
+node_modules/
+coverage/**/*.js
+server/migrations/*.js
+README.md

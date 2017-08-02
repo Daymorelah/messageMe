@@ -14,7 +14,7 @@ app.use('/', routes);
 
 
 app.listen(2340, () => {
-  console.log('Server is up and listening on port 234');
+  console.log('Server is up and listening on port 2340');
 });
 
 export default app;

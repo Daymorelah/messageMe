@@ -8,7 +8,7 @@
     "format": "sequelize db:migrate:undo:all && sequelize db:migrate",
     "test": "set NODE_ENV=test&& mocha test/controllers/ --compilers js:babel-register",
     "migration": "sequelize db:migrate",
-    "coverage": "babel-node ./node_modules/babel-istanbul/lib/cli.js cover ./node_modules/mocha/bin/_mocha test/controllers",
+    "coverage": "set NODE_ENV=test&& babel-node ./node_modules/babel-istanbul/lib/cli.js cover ./node_modules/mocha/bin/_mocha test/controllers",
     "coveralls": "npm run coverage && cat ./coverage/lcov.info | coveralls"
   },
   "author": "Ademola Hussain",
@@ -33,7 +33,6 @@
     "eslint": "^3.19.0",
     "eslint-config-airbnb-base": "^11.2.0",
     "eslint-plugin-import": "^2.2.0",
-    "mocha-lcov-reporter": "^1.3.0",
     "nodemon": "^1.11.0"
   },
   "repository": {

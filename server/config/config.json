@@ -16,7 +16,7 @@
     "port": 5432
   },
   "production": {
-    "username": "roots",
+    "username": "root",
     "password": null,
     "database": "database_production",
     "host": "127.0.0.1",

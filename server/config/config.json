@@ -20,8 +20,6 @@
   "production": {
     "use_env_variable": "DATABASE_URL",
     "dialect": "postgres",
-    "port": 5432,
-    "dialectOptions":{
-    "ssl": true}
-  }
+    "port": 5432
+}
 }

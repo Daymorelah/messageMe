@@ -10,7 +10,7 @@
     "migration": "sequelize db:migrate",
     "coverage": "set NODE_ENV=test&& babel-node ./node_modules/babel-istanbul/lib/cli.js cover ./node_modules/mocha/bin/_mocha test/controllers",
     "coveralls": "npm run coverage && cat ./coverage/lcov.info | coveralls",
-    "deployToHeroku": "babel-node app.js"
+    "deployToHeroku": "babel-node app.js --presets es2015"
   },
   "author": "Ademola Hussain",
   "license": "ISC",

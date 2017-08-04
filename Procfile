@@ -1,1 +1,1 @@
-web: npm run deployToHeroku
+web: npm start

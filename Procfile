@@ -1,1 +1,1 @@
-web: npm run deployToHeroku
+web: npm install -g babel-cli && npm run deployToHeroku

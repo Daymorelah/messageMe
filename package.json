@@ -1,3 +1,4 @@
+
 {
   "name": "updatepostit",
   "version": "1.0.0",
@@ -10,7 +11,7 @@
     "migration": "sequelize db:migrate",
     "coverage": "set NODE_ENV=test&& babel-node ./node_modules/babel-istanbul/lib/cli.js cover ./node_modules/mocha/bin/_mocha test/controllers",
     "coveralls": "npm run coverage && cat ./coverage/lcov.info | coveralls",
-    "deployToHeroku": "babel-node app.js --presets es2015"
+    "deployToHeroku": "node app.js"
   },
   "author": "Ademola Hussain",
   "license": "ISC",
@@ -19,6 +20,7 @@
     "chai": "^4.1.0",
     "chai-array": "0.0.2",
     "chai-http": "^3.0.0",
+    "dotenv": "^4.0.0",
     "express": "^4.15.3",
     "mocha": "^3.4.2",
     "morgan": "^1.8.2",

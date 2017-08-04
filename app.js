@@ -10,10 +10,10 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(morgan('dev'));
 app.use('/', routes);
+const port = process.env.PORT || 2340 ;
 
 
-
-app.listen(2340, () => {
+app.listen(port, () => {
   console.log('Server is up and listening on port 2340');
 });
 

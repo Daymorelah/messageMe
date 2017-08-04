@@ -18,7 +18,10 @@
     "port": 5432
   },
   "production": {
-    "use_env_variable": "DATABASE_URL",
+    "username": "nygdcfegblqqqc",
+    "password": "602825e79bd322af24164ccdbc765dfb317aab9809d53ebc65aae7a74ef155c0",
+    "database": "d7so8hia7r0j1k",
+    "host": "ec2-23-23-248-162.compute-1.amazonaws.com",
     "dialect": "postgres",
     "port": 5432,
     "ssl": true

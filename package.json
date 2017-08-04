@@ -9,7 +9,8 @@
     "test": "set NODE_ENV=test&& mocha test/controllers/ --compilers js:babel-register",
     "migration": "sequelize db:migrate",
     "coverage": "set NODE_ENV=test&& babel-node ./node_modules/babel-istanbul/lib/cli.js cover ./node_modules/mocha/bin/_mocha test/controllers",
-    "coveralls": "npm run coverage && cat ./coverage/lcov.info | coveralls"
+    "coveralls": "npm run coverage && cat ./coverage/lcov.info | coveralls",
+    "deployToHeroku": "babel-node app.js"
   },
   "author": "Ademola Hussain",
   "license": "ISC",

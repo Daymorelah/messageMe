@@ -7,8 +7,8 @@ const groupController = Group;
 const messageControler = Message;
 const userController = User;
 
-router.get('/home', (req, res) => {
-  res.status(201).send({Message: 'Welcome to the App!'});
+router.get('/', (req, res) => {
+  res.status(201).send({Message: 'Welcome to the API for messageMe App!'});
 }); //end of home page
 
 router.post('/group', groupController.CreateGroup);

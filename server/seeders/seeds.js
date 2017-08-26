@@ -1,11 +1,18 @@
 
 import Promise from 'bluebird';
-import db from '../models';
+import Sequelize from 'sequelize';
+import User from '../models/user';
+import Group from '../models/group';
+import Message from '../models/message';
+// import db from '../models';
 
-const Group = db.Group;
-const Message = db.Message;
-const User = db.User;
+// const Group = db.Group;
+// const Message = db.Message;
+// const User = db.User;
 
+let sequelize = new Sequelize('testUpdate','postgres','andelabootcamp24',
+  {host: '127.0.0.1',
+    dialect: 'postgres'});
 
 let groupData = [
   { groupName: 'Family',
@@ -83,7 +90,7 @@ let messageData = [
     groupID:  7},
 ];
 
-db.sequelize.sync({force:true})
+sequelize.sync({force:true})
 .then( () => {
   console.log('Seeding the database...');
 })

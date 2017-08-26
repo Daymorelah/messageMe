@@ -24,18 +24,18 @@ export default {
 
   list(req, res){
     Message.findAll({
-    //   include: [{
-    //     model: Group,
-    //     as: 'groupMess'
-    //   }]
+      include: [{
+        model: Group,
+        as: 'groupMess'
+      }]
      })
     .then( data => {
       let results = [];
       data.forEach( (msg)=> {
         let result = {
           'Message Text': msg.messageBody,
-          //'Owner of Message': msg.messageOwner,
-          //'Group Name': msg.groupMess.groupName
+          'Owner of Message': msg.messageOwner,
+          'Group Name': msg.groupMess.groupName
         };
         results.push(result);
       });

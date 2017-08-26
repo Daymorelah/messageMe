@@ -11,7 +11,7 @@
   "test": {
     "username": "postgres",
     "password": "andelabootcamp24",
-    "database": "travis",
+    "database": "testUpdate",
     "host": "127.0.0.1",
     "dialect": "postgres",
     "port": 5432

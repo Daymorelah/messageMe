@@ -5,17 +5,19 @@
   "main": "app.js",
   "scripts": {
     "start": "nodemon app.js --exec babel-node",
-    "format": "sequelize db:migrate:undo:all && sequelize db:migrate",
+    "format": "set NODE_ENV=development&& sequelize db:migrate:undo:all && sequelize db:migrate",
     "test": "set NODE_ENV=test&& mocha test/controllers/ --compilers js:babel-register",
     "migration": "sequelize db:migrate",
     "coverage": "set NODE_ENV=test&& babel-node ./node_modules/babel-istanbul/lib/cli.js cover ./node_modules/mocha/bin/_mocha test/controllers",
     "coveralls": "npm run coverage && cat ./coverage/lcov.info | coveralls",
-    "deployToHeroku": "./node_modules/.bin/babel-node app.js"
+    "deployToHeroku": "./node_modules/.bin/babel-node app.js",
+    "seed": "set NODE_ENV=development&& babel-node server/seeders/seeds.js"
   },
   "author": "Ademola Hussain",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.17.2",
+    "bluebird": "^3.5.0",
     "chai": "^4.1.0",
     "chai-array": "0.0.2",
     "chai-http": "^3.0.0",

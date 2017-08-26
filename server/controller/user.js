@@ -24,14 +24,14 @@ export default {
   }, //end of property CreateUser
   list(req, res){
     User.findAll({
-      // include: [{
-      //   model: Group,
-      //   as: 'groupsForThisUser',
-      //   foreignKey: 'id'
-      // },
-      // {
-      //   model: User,
-      //   as: 'userBestFriend',}]
+      include: [{
+        model: Group,
+        as: 'groupsForThisUser',
+        foreignKey: 'id'
+      },
+      {
+        model: User,
+        as: 'userBestFriend',}]
     })
     .then(data =>  {
       let results = [] ;
@@ -40,12 +40,12 @@ export default {
         let result = {
           Username: dat.userName,
           Email: dat.email,
-          //'Best Friend': dat.userBestFriend.userName //userBestFriend is an object not an array so cant use .map or forEach
+          'Best Friend': dat.userBestFriend.userName //userBestFriend is an object not an array so cant use .map or forEach
         };
-        // dat.groupsForThisUser.forEach((grp)=>{  //in group controller we used .map function of an array object
-        //   body.push(grp.groupName);
-        // });
-        // result['Groups this user belongs to'] = body;
+        dat.groupsForThisUser.forEach((grp)=>{  //in group controller we used .map function of an array object
+          body.push(grp.groupName);
+        });
+        result['Groups this user belongs to'] = body;
         body = [];
         results.push(result);
       }); //end of forEach loop

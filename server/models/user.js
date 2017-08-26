@@ -10,9 +10,10 @@ export default (sequelize, DataTypes) => {
     User.belongsToMany(models.Group, {
       through: 'GroupUsers',
       as: 'groupsForThisUser',
-      foreignKey: 'groupid'
+      foreignKey: 'groupid',
+      onDelete: 'CASCADE' 
     });
-    User.belongsTo(User, {foreignKey: 'bestFriend', as: 'userBestFriend'});
+    User.belongsTo(User, {foreignKey: 'bestFriend', as: 'userBestFriend', onDelete: 'CASCADE'});
   }; //end of association
   return User;
 };

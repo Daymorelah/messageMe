@@ -8,12 +8,14 @@ export default (sequelize, DataTypes) =>  {
   Group.associate = (models) => {
     Group.hasMany(models.Message,{
       foreignKey: 'groupId',
-      as: 'groupMessages'
+      as: 'groupMessages',
+      onDelete: 'CASCADE'
     });
     Group.belongsToMany(models.User, {
       through: 'GroupUsers',
       as: 'usersOfThisGroup',
-      foreignKey: 'userid'
+      foreignKey: 'userid',
+      onDelete: 'CASCADE'
     });
   }; //end of association
   return Group;

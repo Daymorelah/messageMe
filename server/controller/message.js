@@ -28,14 +28,14 @@ export default {
         model: Group,
         as: 'groupMess'
       }]
-     })
+    })
     .then( data => {
       let results = [];
       data.forEach( (msg)=> {
         let result = {
           'Message Text': msg.messageBody,
           'Owner of Message': msg.messageOwner,
-          'Group Name': msg.groupMess.groupName
+          'Group Name': msg.groupMess
         };
         results.push(result);
       });

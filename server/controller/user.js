@@ -1,9 +1,10 @@
 
+import 
 import model from '../models';
 
 const User = model.User;
 const Group = model.Group;
-const GroupUsers = model.GroupUsers;
+//const GroupUsers = model.GroupUsers;
 
 export default {
   CreatUser(req, res){
@@ -14,9 +15,11 @@ export default {
       bestFriend: req.body.bestFriend
     })
     .then(data => {
+
       let result = {
         Username: data.userName,
         Email: data.email,
+        Password: data.password,
         'Best Friend': data.bestFriend
       };
       res.status(201).send(result);})
@@ -25,13 +28,13 @@ export default {
   list(req, res){
     User.findAll({
       include: [{
-        model: Group,
-        as: 'groupsForThisUser',
-        foreignKey: 'id'
-      },
-      {
-        model: User,
-        as: 'userBestFriend',}]
+      //   model: Group,
+      //   as: 'groupsForThisUser',
+      //   foreignKey: 'id'
+      // },
+      // {
+       model: User,
+       as: 'userBestFriend',}]
     })
     .then(data =>  {
       let results = [] ;
@@ -40,18 +43,19 @@ export default {
         let result = {
           Username: dat.userName,
           Email: dat.email,
-          'Best Friend': dat.userBestFriend.userName //userBestFriend is an object not an array so cant use .map or forEach
+          Password: dat.password,
+          'Best Friend': dat.userBestFriend//.userNAme //userBestFriend is an object not an array so cant use .map or forEach
         };
-        dat.groupsForThisUser.forEach((grp)=>{  //in group controller we used .map function of an array object
-          body.push(grp.groupName);
-        });
-        result['Groups this user belongs to'] = body;
+        // dat.groupsForThisUser.forEach((grp)=>{  //in group controller we used .map function of an array object
+        //   body.push(grp.groupName);
+        // });
+        // result['Groups this user belongs to'] = body;
         body = [];
         results.push(result);
       }); //end of forEach loop
       res.status(201).send(results);
     })
-    .catch(error => res.status(401).send(error));
+    .catch(error => res.status(401).send(error.message));
   }, //end of property list
   addGroup(req, res){
     User.findById(req.params.id)
@@ -68,4 +72,7 @@ export default {
     }) // promise
     .catch(error => res.status(401).send(error));
   }, //end of property addGroup
+  login(req, res){
+
+  }
 }; //end of export default

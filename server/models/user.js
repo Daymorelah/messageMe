@@ -34,8 +34,8 @@ export default (sequelize, DataTypes) => {
   }; //end of association
   
 //used when a user want to login so as to chek if the password entered is coreect.
-  User.prototype.verifyPassword = (formPassword) => {
-    return bcrypt.compareSync(formPassword, this.password);
+  User.prototype.verifyPassword = (formPassword,Userpassword) => {
+    return bcrypt.compareSync(formPassword, Userpassword);
   }; //end of instance method verifyPassword
   return User;
 };

@@ -10,9 +10,15 @@ import Message from '../models/message';
 // const Message = db.Message;
 // const User = db.User;
 
+//Create an instance of the database.
 let sequelize = new Sequelize('testUpdate','postgres','andelabootcamp24',
   {host: '127.0.0.1',
     dialect: 'postgres'});
+
+//Call the defined models' function with approriate arguments as defined in the models
+let user = User(sequelize, Sequelize);
+let group = Group(sequelize, Sequelize);
+let message = Message(sequelize, Sequelize);
 
 let groupData = [
   { groupName: 'Family',
@@ -96,21 +102,24 @@ sequelize.sync({force:true})
 })
 .then( () => {
   return Promise.map(userData, (data) =>{
-    return User.create(data);
+    //return User.create(data);//use with projects database config
+    return user.create(data);
   });
 })
 .then( () => {
   return Promise.map(groupData, (data) =>{
-    return Group.create(data);
+    //return Group.create(data);//use with projects database config
+    return group.create(data);
   });
 })
 .then( () => {
   return Promise.map(messageData, (data) =>{
-    return Message.create(data);
+    //return MEssage.create(data);//use with projects database config
+    return message.create(data);
   });
 })
 .then( () =>{
-  db.sequelize.close();
+  sequelize.close();
   console.log('Finished seeding the database!');
   return null;
 });

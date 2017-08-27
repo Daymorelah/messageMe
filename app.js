@@ -6,6 +6,7 @@ import routes from './routes';
 
 const app = express();
 
+app.set('secrete', 'secreteUsedForJasonwebtokens');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(morgan('dev'));

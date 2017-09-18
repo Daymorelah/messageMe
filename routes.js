@@ -21,5 +21,8 @@ router.get('/user/list', protect.checkForToken, userController.list);
 router.put('/user/:id/addGroup', protect.checkForToken, userController.addGroup);
 router.put('/group/:id/addUser', protect.checkForToken, groupController.addUser);
 router.post('/login', userController.login);
+/*Used to test a react-redux bookshop app.
+router.get('/user/list',  userController.list);
+router.post('/group', groupController.CreateGroup); */
 
 export default router;

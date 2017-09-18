@@ -20,7 +20,10 @@ export default {
       exclude: /node_modules/,
 //path to be used to look for .js and .jsx file extension
       include: APP_DIR,
-      loader: 'babel'
+      loader: 'babel-loader',
+      query: {
+        presets: ['es2015','react']
+      }
     }]
   }
 }

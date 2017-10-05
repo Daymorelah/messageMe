@@ -12,7 +12,7 @@ notifications:
     on_failure: change
 # Determine what command to run on the console
 before_script:
-  - npm install -g sequelize-cli babel-cli
+  - psql -c 'CREATE DATABASE test2;' -U postgres
   - npm run migration
 # Select service to use (database to use)
 services:
@@ -24,9 +24,6 @@ script:
 env:
   - NODE_ENV=test
 # Adddon necessary so as to be able to run migrations
-addons:
-  postgresql: "9.3"
-# command to run after testing
 after_success:
   - npm run coveralls
   - npm install -g codeclimate-test-reporter

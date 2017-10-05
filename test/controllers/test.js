@@ -34,6 +34,7 @@ describe('Test Update-postIT\'s routes', () =>{
     }); //end of it block
     it.only('should create a user afer sign up ', (done) =>{
       expect(true).to.be.true;
+      done();
     }); //end of it block
   }); //end of inner test suite for signup route
 

@@ -1,35 +1,17 @@
 
 import chai from 'chai';
 import chaiHTTP from 'chai-http';
-import chaiARRAY from 'chai-array';
 import app from '../../app';
 import model from '../../server/models';
 
-const should = chai.should();
 const expect = chai.expect;
 const User = model.User;
 const Group = model.Group;
 const Message = model.Message;
 chai.use(chaiHTTP);
-chai.use(chaiARRAY);
 
 describe('Test Update-postIT\'s routes', () =>{
-  // before((done) => {
-  //   User.destroy({
-  //     where: {},
-  //     truncate: true
-  //   }); //end of model User
-  //   Group.destroy({
-  //     where:{},
-  //     truncate: true
-  //   }); //end of model Group
-  //   Message.destroy({
-  //     where:{},
-  //     truncate: true
-  //   }); //end of model message
-  //   done();
-  //}); //end of beforeEach hook.
-  describe('Test for signup route', () => {
+  describe.only('Test for signup route', () => {
     it('should create a user after signup', (done) =>{
       chai.request(app).post('/user')
       .type('form').send({
@@ -49,6 +31,9 @@ describe('Test Update-postIT\'s routes', () =>{
           done(err);
         }
       });//end of chai.request
+    }); //end of it block
+    it.only('should create a user afer sign up ', (done) =>{
+      expect(true).to.be.true;
     }); //end of it block
   }); //end of inner test suite for signup route
 

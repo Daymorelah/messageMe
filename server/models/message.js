@@ -9,7 +9,8 @@ export default (sequelize, DataTypes) => {
   Message.associate = (models) => {
     Message.belongsTo(models.Group, {
       foreignKey: 'groupId',
-      as: 'groupMess'
+      as: 'groupMess',
+      onDelete: 'CASCADE'
     });
   };
   return Message;

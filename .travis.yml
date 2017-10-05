@@ -1,24 +1,29 @@
 language: node_js
 node_js:
   - "node"
+#Select branch to test
 branches:
   only:
     - test
+#Select how to get notified if a test was conducted and if it passed or failed
 notifications:
   email:
     on_success: change
     on_failure: change
+# Determine what command to run on the console
 before_script:
-  - npm install -g sequelize-cli babel-cli
+  - psql -c 'CREATE DATABASE test2;' -U postgres
   - npm run migration
+# Select service to use (database to use)
 services:
   - postgresql
+# Choose what command to use to run the test
 script:
   - npm test
+# Choose what enviroment to use to test
 env:
   - NODE_ENV=test
-addons:
-  postgresql: "9.3"
+# Adddon necessary so as to be able to run migrations
 after_success:
   - npm run coveralls
   - npm install -g codeclimate-test-reporter

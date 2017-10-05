@@ -20,7 +20,7 @@ module.exports = {
       bestFriend:{
         type:Sequelize.INTEGER,
         reference: [{
-          model: 'User',
+          model: 'Users',
           key: 'id',
           as: 'userBestFriend'
         }]
